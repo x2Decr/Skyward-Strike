@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Falcon Strike - Cockpit Flight Simulator</title>
+<title>Skyward Strike - Cockpit Flight Simulator</title>
 <style>
 html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:Consolas,Menlo,monospace;color:#cfe}
 canvas{display:block;width:100vw;height:100vh}
@@ -432,7 +432,7 @@ function wHud(){if(!S.hud)return;const a=A;ballHud();ctx.textAlign='left';ctx.fo
    Same approach as a static GitHub Pages site: Firebase Realtime Database from the CDN, config below, rules in database.rules.json.
    Each pilot writes its own state to dogfight/<room>/p/<id> ~10x/s and listens to the others. Hits and kills travel as small
    messages in dogfight/<room>/in/<victimId>. The shooter detects hits, the victim applies the damage. */
-const MP_CFG={apiKey:"AIzaSyCocVCQRn4BWpxo4JB23SPn4pfw6WJfdSs",authDomain:"jellygame-6408f.firebaseapp.com",databaseURL:"https://jellygame-6408f-default-rtdb.firebaseio.com",projectId:"jellygame-6408f",appId:"1:1023538014084:web:ba66970acb4cbd38961fd1"};
+const MP_CFG={apiKey: "AIzaSyCifGiEiU7G2YXRsNOse5lQ_cJkgqX8whU",authDomain: "skyward-strike.firebaseapp.com" databaseURL: "https://skyward-strike-default-rtdb.firebaseio.com",projectId: "skyward-strike",storageBucket: "skyward-strike.firebasestorage.app",messagingSenderId: "995835772309",appId: "1:995835772309:web:27573cb4ddc7f0226b4a9c"};
 const FBU='https://www.gstatic.com/firebasejs/10.12.2/',MP_MAX=8,PEERS={},q1=v=>Math.round(v*10)/10,q3=v=>Math.round(v*1000)/1000;
 const mp={on:false,id:'',name:'',room:'',db:null,D:null,me:null,k:0,d:0,by:'',killer:'',unsubs:[],pend:{},warn:0,last:0,dead:0};
 async function mpJoin(name,room){const st=$('mSt');st.textContent='Connecting...';
