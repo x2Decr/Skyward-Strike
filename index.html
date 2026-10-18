@@ -14,7 +14,7 @@ table{border-collapse:collapse;width:100%;font-size:14px}td{padding:3px 8px;bord
 label{display:block;margin:12px 0}input[type=text]{width:100%;box-sizing:border-box;background:#08301f;color:#3dffb0;border:1px solid #3dffb0;font:inherit;padding:7px;margin-top:4px}input[type=range]{width:100%}select{background:#08301f;color:#3dffb0;border:1px solid #3dffb0;font:inherit}
 </style></head><body>
 <canvas id="c"></canvas>
-<div id="menu" class="ov on"><div class="box"><h1>FALCON STRIKE</h1>
+<div id="menu" class="ov on"><div class="box"><h1>SKYWARD STRIKE</h1>
 <button id="bStart">Start Flight</button><button id="bFree">Free Flight</button><button id="bAf">Airfield</button><button id="bCv">Carrier Flight</button><button id="bTp">Target Practice</button><button id="bMp">Multiplayer Dogfight</button><button id="bMis">Missions</button><button id="bTut">Carrier Landing Tutorial</button><button id="bCtl">Controls</button><button id="bSet">Settings</button><button id="bRest">Restart Flight</button></div></div>
 <div id="mis" class="ov"><div class="box"><h1>MISSIONS</h1><button data-m="1">1 - Training</button><button data-m="2">2 - Ocean Patrol</button><button data-m="3">3 - Carrier Operations</button><button data-m="4">4 - Target Intercept</button><button id="bBack3">Back</button></div></div>
 <div id="mp" class="ov"><div class="box"><h1>DOGFIGHT</h1><label>Callsign<input id="mName" type="text" maxlength="12"></label><label>Room code (share it with friends)<input id="mRoom" type="text" maxlength="16" value="ARENA"></label><div id="mSt" style="min-height:22px;color:#ffb020"></div><button id="mGo">Join Room</button><button id="bBack4">Back</button></div></div>
@@ -432,7 +432,7 @@ function wHud(){if(!S.hud)return;const a=A;ballHud();ctx.textAlign='left';ctx.fo
    Same approach as a static GitHub Pages site: Firebase Realtime Database from the CDN, config below, rules in database.rules.json.
    Each pilot writes its own state to dogfight/<room>/p/<id> ~10x/s and listens to the others. Hits and kills travel as small
    messages in dogfight/<room>/in/<victimId>. The shooter detects hits, the victim applies the damage. */
-const MP_CFG={apiKey: "AIzaSyCifGiEiU7G2YXRsNOse5lQ_cJkgqX8whU",authDomain: "skyward-strike.firebaseapp.com" databaseURL: "https://skyward-strike-default-rtdb.firebaseio.com",projectId: "skyward-strike",storageBucket: "skyward-strike.firebasestorage.app",messagingSenderId: "995835772309",appId: "1:995835772309:web:27573cb4ddc7f0226b4a9c"};
+const MP_CFG={apiKey: "AIzaSyCifGiEiU7G2YXRsNOse5lQ_cJkgqX8whU",authDomain: "skyward-strike.firebaseapp.com",databaseURL: "https://skyward-strike-default-rtdb.firebaseio.com",projectId: "skyward-strike",storageBucket: "skyward-strike.firebasestorage.app",messagingSenderId: "995835772309",appId: "1:995835772309:web:27573cb4ddc7f0226b4a9c"};
 const FBU='https://www.gstatic.com/firebasejs/10.12.2/',MP_MAX=8,PEERS={},q1=v=>Math.round(v*10)/10,q3=v=>Math.round(v*1000)/1000;
 const mp={on:false,id:'',name:'',room:'',db:null,D:null,me:null,k:0,d:0,by:'',killer:'',unsubs:[],pend:{},warn:0,last:0,dead:0};
 async function mpJoin(name,room){const st=$('mSt');st.textContent='Connecting...';
